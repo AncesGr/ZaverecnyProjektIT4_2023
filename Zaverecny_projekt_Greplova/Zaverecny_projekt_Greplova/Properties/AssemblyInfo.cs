@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Obecné informace o sestavení se řídí přes následující 
 // sadu atributů. Změnou hodnot těchto atributů se upraví informace
 // přidružené k sestavení.
-[assembly: AssemblyTitle("test1")]
+[assembly: AssemblyTitle("Zaverecny_projekt_Greplova")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("test1")]
+[assembly: AssemblyProduct("Zaverecny_projekt_Greplova")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Následující GUID se používá pro ID knihovny typů, pokud je tento projekt vystavený pro COM.
-[assembly: Guid("15b7be79-9e79-42bd-b773-13d52e6bc05d")]
+[assembly: Guid("f4d835f2-ab27-4d68-9286-f739e857ccfb")]
 
 // Informace o verzi sestavení se skládá z těchto čtyř hodnot:
 //

@@ -1,4 +1,4 @@
-﻿namespace test1
+﻿namespace Zaverecny_projekt_Greplova
 {
     partial class Form1
     {

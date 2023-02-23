@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace test1
+namespace Zaverecny_projekt_Greplova
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            //aa
-            //bb
-            //cc
-            //xxx
         }
     }
 }

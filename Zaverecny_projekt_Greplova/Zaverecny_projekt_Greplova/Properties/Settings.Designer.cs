@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace test1.Properties
+namespace Zaverecny_projekt_Greplova.Properties
 {
 
 

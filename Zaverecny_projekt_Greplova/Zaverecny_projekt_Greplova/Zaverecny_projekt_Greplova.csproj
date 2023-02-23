@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15B7BE79-9E79-42BD-B773-13D52E6BC05D}</ProjectGuid>
+    <ProjectGuid>{F4D835F2-AB27-4D68-9286-F739E857CCFB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>test1</RootNamespace>
-    <AssemblyName>test1</AssemblyName>
+    <RootNamespace>Zaverecny_projekt_Greplova</RootNamespace>
+    <AssemblyName>Zaverecny_projekt_Greplova</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

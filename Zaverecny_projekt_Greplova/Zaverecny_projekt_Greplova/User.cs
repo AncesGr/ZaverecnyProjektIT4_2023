@@ -20,10 +20,6 @@ namespace Zaverecny_projekt_Greplova
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
 
-        public User()
-        {
-
-        }
 
         public bool VerifyPassword(string text)
         {

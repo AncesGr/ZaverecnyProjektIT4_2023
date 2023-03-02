@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Zaverecny_projekt_Greplova
 {
-    public partial class MainForm : Form
+    public partial class AdminUserEdit : Form
     {
-        public User User { get; set; }
-        public MainForm( User user)
+        SqlRepository sqlRepository;
+        public AdminUserEdit()
         {
             InitializeComponent();
-            User = user;
             
         }
 
-        private void btnAdmUser_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

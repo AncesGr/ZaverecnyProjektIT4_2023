@@ -21,17 +21,31 @@ namespace Zaverecny_projekt_Greplova
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtNameL.Text  != " " && txtPasswordL.Text != " ")
+            if (txtNameL.Text != " " && txtPasswordL.Text != " ")
             {
-               sqlRepository.Login(txtNameL.Text, txtPasswordL.Text);
+                User user = sqlRepository.GetUser(txtNameL.Text);
+                if (user != null)
+                {
+                    if (user.VerifyPassword(txtPasswordL.Text))
+                    {
+                        MainForm mainForm = new MainForm(user);
+                        mainForm.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tento uživatel neexistuje!");
+                }
             }
             else
             {
-                MessageBox.Show("Nevyplnil jste uživatelké jméno či heslo");
+                MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
             }
         }
+        
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        /*private void btnRegister_Click(object sender, EventArgs e)
         {
             if (txtNameL.Text != "" && txtPasswordL.Text != " ")
             {
@@ -41,6 +55,6 @@ namespace Zaverecny_projekt_Greplova
             {
                 MessageBox.Show("Nevyplnil jste uživatelké jméno či heslo");
             }
-        }
+        }*/
     }
 }

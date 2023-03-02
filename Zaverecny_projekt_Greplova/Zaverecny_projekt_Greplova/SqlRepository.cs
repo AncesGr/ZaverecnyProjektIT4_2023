@@ -18,69 +18,51 @@ namespace Zaverecny_projekt_Greplova
         }
 
         public string connectionstring { get; set; }
-        byte[] PasswordSalt;
-        byte[] PasswordHash;
-
-        public void Login (string username, string password) 
+        public User GetUser(string username)
         {
-            using (SqlConnection connection = new SqlConnection(connectionstring)) 
-            {
-                connection.Open();
-                using (SqlCommand command = connection.CreateCommand()) 
-                {
-                    command.CommandText = "select *  from Users where Name=@username ";
-                    command.Parameters.AddWithValue("username", username);
-                   // password=Convert.ToString(PasswordHash(password));
-                    //command.Parameters.AddWithValue("password", password);
-                    using (SqlDataReader dataReader = command.ExecuteReader())
-                    {
-                        if (dataReader.Read())
-                        {
-                            MessageBox.Show("nevim!" + dataReader["Name"]);
-                        }
-                    }
-                }
-                connection.Close();
-            }
-        }
-
-        public void Register(string username, string password)
-        {
+            User user = null;
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "insert into Users values (@name, @idEmployee, Convert(varbinary(max), @passwordHash), Convert(varbinary(max), @passwordSalt))";
-                    command.Parameters.AddWithValue ("name", username);
-                    command.Parameters.AddWithValue("idEmployee", 1);
-                    HashPassword(password);
-                    command.Parameters.AddWithValue("passwordHash", PasswordHash);
-                    command.Parameters.AddWithValue("passwordSalt", PasswordSalt);
-                    command.ExecuteNonQuery();
+                    command.CommandText = "select * from Users where Name=@username";
+                    command.Parameters.AddWithValue("username", username);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new User(reader["Name"].ToString(), (byte[])reader["PasswordHash"], (byte[])reader["PasswordSalt"]);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+                        }
+                    }
                 }
                 connection.Close();
             }
+            return user;
         }
 
-        private void HashPassword (string password)
-        {
-            using(var hmac = new HMACSHA512())
-            {
-               PasswordSalt = hmac.Key;
-               PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-            }
-        }
 
-        private bool VerifyPassword(string text)
-        {
-            byte[] hash;
-            using (var hmac = new HMACSHA512(PasswordSalt))
-            {
-                hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(text));
-            }
-            return hash.SequenceEqual(PasswordHash);
-        }
-
+        /* public void Register(string username, string password)
+         {
+             using (SqlConnection connection = new SqlConnection(connectionstring))
+             {
+                 connection.Open();
+                 using (SqlCommand command = connection.CreateCommand())
+                 {
+                     command.CommandText = "insert into Users values (@name, @idEmployee, Convert(varbinary(max), @passwordHash), Convert(varbinary(max), @passwordSalt))";
+                     command.Parameters.AddWithValue ("name", username);
+                     command.Parameters.AddWithValue("idEmployee", 1);
+                     HashPassword(password);
+                     command.Parameters.AddWithValue("passwordHash", PasswordHash);
+                     command.Parameters.AddWithValue("passwordSalt", PasswordSalt);
+                     command.ExecuteNonQuery();
+                 }
+                 connection.Close();
+             }
+         }*/
     }
 }

@@ -12,9 +12,9 @@ namespace Zaverecny_projekt_Greplova
 {
     internal class SqlRepository
     {
-        public SqlRepository(string connectionstring)
+        public SqlRepository()
         {
-            this.connectionstring = connectionstring;
+            this.connectionstring = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog='C:\USERS\ANNA GREPLOVÁ\SOURCE\REPOS\ZAVERECNYPROJEKTIT4_2023\DB_ZAVERECNY_PROJEKT.MDF';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
         public string connectionstring { get; set; }

@@ -16,7 +16,7 @@ namespace Zaverecny_projekt_Greplova
         public Form_Login()
         {
             InitializeComponent();
-            sqlRepository = new SqlRepository(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog='C:\USERS\ANNA GREPLOVÁ\SOURCE\REPOS\ZAVERECNYPROJEKTIT4_2023\DB_ZAVERECNY_PROJEKT.MDF';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            sqlRepository = new SqlRepository();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

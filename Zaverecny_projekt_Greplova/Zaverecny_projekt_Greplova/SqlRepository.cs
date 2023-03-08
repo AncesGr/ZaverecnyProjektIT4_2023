@@ -45,6 +45,54 @@ namespace Zaverecny_projekt_Greplova
             return user;
         }
 
+        public List<User> GetUsers()
+        {
+            List<User> users = new List<User>();
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from Users";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            users.Add(new User(reader["Name"].ToString(), Convert.ToInt32(reader["IdEmployee"])));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return users;
+        }
+
+        public Employee GetEmployee(int idEmployee)
+        {
+            Employee employee = null;
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from Employee where IdEmployee=@idEmployee";
+                    command.Parameters.AddWithValue("idEmployee", idEmployee);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            employee = new Employee(reader["FirstName"].ToString(), reader["LastName"].ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tento zaměstnanec není uveden v databázi!");
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return employee;
+        }
 
         /* public void Register(string username, string password)
          {

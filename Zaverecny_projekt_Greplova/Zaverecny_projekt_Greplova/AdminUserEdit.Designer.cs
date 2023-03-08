@@ -67,7 +67,7 @@
             this.Controls.Add(this.lwAdmUserEdit);
             this.Name = "AdminUserEdit";
             this.Text = "Edit users";
-            
+            this.Load += new System.EventHandler(this.AdminUserEdit_Load);
             this.ResumeLayout(false);
 
         }

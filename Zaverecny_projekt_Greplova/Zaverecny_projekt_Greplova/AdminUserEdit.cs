@@ -16,8 +16,17 @@ namespace Zaverecny_projekt_Greplova
         public AdminUserEdit()
         {
             InitializeComponent();
-            
+            sqlRepository = new SqlRepository();
         }
 
+        private void AdminUserEdit_Load(object sender, EventArgs e)
+        {
+            var listUsers = sqlRepository.GetUsers();
+            foreach(var user in listUsers) 
+            {
+                Employee employee = sqlRepository.GetEmployee(user.IdEmployee);
+                lwAdmUserEdit.Items.Add(new ListViewItem(new string[] { employee.FirstName + " " + employee.LastName, user.Name }));
+            }
+        }
     }
 }

@@ -13,16 +13,24 @@ namespace Zaverecny_projekt_Greplova
     public partial class MainForm : Form
     {
         public User User { get; set; }
-        public MainForm( User user)
+        public Form FormLogin { get; set; } 
+        public MainForm( User user, Form form)
         {
             InitializeComponent();
             User = user;
+            FormLogin = form;
             
         }
 
         private void btnAdmUser_Click(object sender, EventArgs e)
         {
+            AdminUserEdit adminUserEdit = new AdminUserEdit();
+            adminUserEdit.ShowDialog();
+        }
 
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormLogin.Close();
         }
     }
 }

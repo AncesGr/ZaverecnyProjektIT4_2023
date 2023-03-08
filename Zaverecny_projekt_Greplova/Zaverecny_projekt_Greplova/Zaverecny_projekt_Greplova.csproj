@@ -52,6 +52,7 @@
     <Compile Include="AdminUserEdit.Designer.cs">
       <DependentUpon>AdminUserEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>

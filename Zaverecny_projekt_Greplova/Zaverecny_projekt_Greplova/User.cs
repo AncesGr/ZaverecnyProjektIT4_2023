@@ -9,6 +9,12 @@ namespace Zaverecny_projekt_Greplova
 {
     public class User
     {
+        public User(string name, int idEmployee)
+        {
+            Name = name;
+            IdEmployee = idEmployee;
+        }
+
         public User(string name, byte[] passwordHash, byte[] passwordSalt)
         {
             Name = name;
@@ -20,6 +26,7 @@ namespace Zaverecny_projekt_Greplova
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
 
+        public int IdEmployee { get; set; }
 
         public bool VerifyPassword(string text)
         {

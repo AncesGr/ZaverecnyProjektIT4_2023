@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblAdmin = new System.Windows.Forms.Label();
-            this.btnAdmUser = new System.Windows.Forms.Button();
+            this.btnAdmUsers = new System.Windows.Forms.Button();
             this.btnAdmRole = new System.Windows.Forms.Button();
             this.btnAdmEmployee = new System.Windows.Forms.Button();
             this.btnAdmContract = new System.Windows.Forms.Button();
@@ -47,17 +47,17 @@
             this.lblAdmin.TabIndex = 1;
             this.lblAdmin.Text = "Admin menu";
             // 
-            // btnAdmUser
+            // btnAdmUsers
             // 
-            this.btnAdmUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdmUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAdmUser.Location = new System.Drawing.Point(44, 76);
-            this.btnAdmUser.Name = "btnAdmUser";
-            this.btnAdmUser.Size = new System.Drawing.Size(131, 42);
-            this.btnAdmUser.TabIndex = 2;
-            this.btnAdmUser.Text = "User";
-            this.btnAdmUser.UseVisualStyleBackColor = false;
-            this.btnAdmUser.Click += new System.EventHandler(this.btnAdmUser_Click);
+            this.btnAdmUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdmUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdmUsers.Location = new System.Drawing.Point(44, 76);
+            this.btnAdmUsers.Name = "btnAdmUsers";
+            this.btnAdmUsers.Size = new System.Drawing.Size(131, 42);
+            this.btnAdmUsers.TabIndex = 2;
+            this.btnAdmUsers.Text = "Users";
+            this.btnAdmUsers.UseVisualStyleBackColor = false;
+            this.btnAdmUsers.Click += new System.EventHandler(this.btnAdmUser_Click);
             // 
             // btnAdmRole
             // 
@@ -125,10 +125,11 @@
             this.Controls.Add(this.btnAdmContract);
             this.Controls.Add(this.btnAdmEmployee);
             this.Controls.Add(this.btnAdmRole);
-            this.Controls.Add(this.btnAdmUser);
+            this.Controls.Add(this.btnAdmUsers);
             this.Controls.Add(this.lblAdmin);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,7 +137,7 @@
 
         #endregion
         private System.Windows.Forms.Label lblAdmin;
-        private System.Windows.Forms.Button btnAdmUser;
+        private System.Windows.Forms.Button btnAdmUsers;
         private System.Windows.Forms.Button btnAdmRole;
         private System.Windows.Forms.Button btnAdmEmployee;
         private System.Windows.Forms.Button btnAdmContract;

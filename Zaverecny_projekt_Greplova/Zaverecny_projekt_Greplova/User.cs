@@ -9,10 +9,12 @@ namespace Zaverecny_projekt_Greplova
 {
     public class User
     {
-        public User(string name, int idEmployee)
+        public User(int id, string name, int idEmployee, int role)
         {
+            Id = id;
             Name = name;
             IdEmployee = idEmployee;
+            Role = role;
         }
 
         public User(string name, byte[] passwordHash, byte[] passwordSalt)
@@ -27,6 +29,8 @@ namespace Zaverecny_projekt_Greplova
         public byte[] PasswordSalt { get; set; }
 
         public int IdEmployee { get; set; }
+        public int Id { get; set; }
+        public int Role { get; set; }
 
         public bool VerifyPassword(string text)
         {
@@ -38,13 +42,13 @@ namespace Zaverecny_projekt_Greplova
             return hash.SequenceEqual(PasswordHash);
         }
 
-        /*public void HashPassword(string password)
+        public void ResetPassword()
         {
             using (var hmac = new HMACSHA512())
             {
                 PasswordSalt = hmac.Key;
-                Password = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("heslo"));
             }
-        }*/
+        }
     }
 }

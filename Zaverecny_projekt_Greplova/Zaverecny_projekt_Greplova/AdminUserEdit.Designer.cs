@@ -28,54 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lwAdmUserEdit = new System.Windows.Forms.ListView();
-            this.chEmployeeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chUserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblAdmEditName = new System.Windows.Forms.Label();
+            this.txtAdmEditName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdmEditPassword = new System.Windows.Forms.Button();
+            this.btnAdmEditOK = new System.Windows.Forms.Button();
+            this.cmbEditRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // lwAdmUserEdit
+            // lblAdmEditName
             // 
-            this.lwAdmUserEdit.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chEmployeeName,
-            this.chUserName});
-            this.lwAdmUserEdit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lwAdmUserEdit.FullRowSelect = true;
-            this.lwAdmUserEdit.GridLines = true;
-            this.lwAdmUserEdit.HideSelection = false;
-            this.lwAdmUserEdit.Location = new System.Drawing.Point(0, 0);
-            this.lwAdmUserEdit.Name = "lwAdmUserEdit";
-            this.lwAdmUserEdit.Size = new System.Drawing.Size(263, 450);
-            this.lwAdmUserEdit.TabIndex = 0;
-            this.lwAdmUserEdit.UseCompatibleStateImageBehavior = false;
-            this.lwAdmUserEdit.View = System.Windows.Forms.View.Details;
+            this.lblAdmEditName.AutoSize = true;
+            this.lblAdmEditName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAdmEditName.Location = new System.Drawing.Point(12, 20);
+            this.lblAdmEditName.Name = "lblAdmEditName";
+            this.lblAdmEditName.Size = new System.Drawing.Size(107, 25);
+            this.lblAdmEditName.TabIndex = 0;
+            this.lblAdmEditName.Text = "User name";
             // 
-            // chEmployeeName
+            // txtAdmEditName
             // 
-            this.chEmployeeName.Text = "Employee name";
-            this.chEmployeeName.Width = 130;
+            this.txtAdmEditName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAdmEditName.Location = new System.Drawing.Point(17, 48);
+            this.txtAdmEditName.Name = "txtAdmEditName";
+            this.txtAdmEditName.Size = new System.Drawing.Size(196, 30);
+            this.txtAdmEditName.TabIndex = 1;
             // 
-            // chUserName
+            // label1
             // 
-            this.chUserName.Text = "User name";
-            this.chUserName.Width = 130;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Role";
+            // 
+            // btnAdmEditPassword
+            // 
+            this.btnAdmEditPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdmEditPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnAdmEditPassword.Location = new System.Drawing.Point(17, 197);
+            this.btnAdmEditPassword.Name = "btnAdmEditPassword";
+            this.btnAdmEditPassword.Size = new System.Drawing.Size(196, 36);
+            this.btnAdmEditPassword.TabIndex = 4;
+            this.btnAdmEditPassword.Text = "Reset password";
+            this.btnAdmEditPassword.UseVisualStyleBackColor = true;
+            this.btnAdmEditPassword.Click += new System.EventHandler(this.btnAdmEditPassword_Click);
+            // 
+            // btnAdmEditOK
+            // 
+            this.btnAdmEditOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdmEditOK.Location = new System.Drawing.Point(236, 197);
+            this.btnAdmEditOK.Name = "btnAdmEditOK";
+            this.btnAdmEditOK.Size = new System.Drawing.Size(84, 36);
+            this.btnAdmEditOK.TabIndex = 5;
+            this.btnAdmEditOK.Text = "OK";
+            this.btnAdmEditOK.UseVisualStyleBackColor = true;
+            this.btnAdmEditOK.Click += new System.EventHandler(this.btnAdmEditOK_Click);
+            // 
+            // cmbEditRole
+            // 
+            this.cmbEditRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbEditRole.FormattingEnabled = true;
+            this.cmbEditRole.Location = new System.Drawing.Point(17, 145);
+            this.cmbEditRole.Name = "cmbEditRole";
+            this.cmbEditRole.Size = new System.Drawing.Size(196, 33);
+            this.cmbEditRole.TabIndex = 6;
             // 
             // AdminUserEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lwAdmUserEdit);
+            this.ClientSize = new System.Drawing.Size(341, 257);
+            this.Controls.Add(this.cmbEditRole);
+            this.Controls.Add(this.btnAdmEditOK);
+            this.Controls.Add(this.btnAdmEditPassword);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtAdmEditName);
+            this.Controls.Add(this.lblAdmEditName);
             this.Name = "AdminUserEdit";
-            this.Text = "Edit users";
+            this.Text = "AdminUserEdit";
             this.Load += new System.EventHandler(this.AdminUserEdit_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView lwAdmUserEdit;
-        private System.Windows.Forms.ColumnHeader chEmployeeName;
-        private System.Windows.Forms.ColumnHeader chUserName;
+        private System.Windows.Forms.Label lblAdmEditName;
+        private System.Windows.Forms.TextBox txtAdmEditName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAdmEditPassword;
+        private System.Windows.Forms.Button btnAdmEditOK;
+        private System.Windows.Forms.ComboBox cmbEditRole;
     }
 }

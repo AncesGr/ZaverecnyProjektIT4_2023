@@ -24,7 +24,7 @@ namespace Zaverecny_projekt_Greplova
 
         private void btnAdmUser_Click(object sender, EventArgs e)
         {
-            AdminUserEdit adminUserEdit = new AdminUserEdit();
+            AdminUserForm adminUserEdit = new AdminUserForm();
             adminUserEdit.ShowDialog();
         }
 

@@ -13,20 +13,51 @@ namespace Zaverecny_projekt_Greplova
     public partial class AdminUserEdit : Form
     {
         SqlRepository sqlRepository;
-        public AdminUserEdit()
+        public int IdUser { get; set; }
+        public AdminUserForm Parent { get; set; }
+        public AdminUserEdit(int idUser, AdminUserForm parent)
         {
             InitializeComponent();
+            IdUser = idUser;
             sqlRepository = new SqlRepository();
+            Parent = parent;
         }
 
         private void AdminUserEdit_Load(object sender, EventArgs e)
         {
-            var listUsers = sqlRepository.GetUsers();
-            foreach(var user in listUsers) 
+            var user = sqlRepository.GetUser(IdUser);
+            txtAdmEditName.Text = user.Name;
+            var role = sqlRepository.GetRole(user.Role);
+            cmbEditRole.Text = role.Name;
+            var roles = sqlRepository.GetRoles();
+            foreach(var R in roles)
             {
-                Employee employee = sqlRepository.GetEmployee(user.IdEmployee);
-                lwAdmUserEdit.Items.Add(new ListViewItem(new string[] { employee.FirstName + " " + employee.LastName, user.Name }));
+                cmbEditRole.Items.Add(R.Name);
             }
+        }
+
+        private void btnAdmEditOK_Click(object sender, EventArgs e)
+        {
+            if(txtAdmEditName.Text != "" && cmbEditRole.Text !="")
+            {
+                var role=sqlRepository.GetRole(cmbEditRole.Text);
+                sqlRepository.UpdateUser(txtAdmEditName.Text, role.Id, IdUser);
+                Parent.LoadData();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Nejsou vyplněna všechna políčka!");
+            }
+        }
+
+        private void btnAdmEditPassword_Click(object sender, EventArgs e)
+        {
+            var user = sqlRepository.GetUser(IdUser);
+            user.ResetPassword();
+            sqlRepository.ResetUserPassword(IdUser, user.PasswordHash, user.PasswordSalt);
+            Parent.LoadData();  
+            this.Close();   
         }
     }
 }

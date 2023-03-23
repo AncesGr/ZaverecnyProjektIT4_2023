@@ -32,7 +32,7 @@ namespace Zaverecny_projekt_Greplova
                     {
                         if (reader.Read())
                         {
-                            user = new User(reader["Name"].ToString(), (byte[])reader["PasswordHash"], (byte[])reader["PasswordSalt"]);
+                            user = new User(Convert.ToInt32(reader["IdUser"]), reader["Name"].ToString(), (byte[])reader["PasswordHash"], (byte[])reader["PasswordSalt"]);
                         }
                         else
                         {
@@ -231,23 +231,22 @@ namespace Zaverecny_projekt_Greplova
             }
         }
 
-        /* public void Register(string username, string password)
-         {
-             using (SqlConnection connection = new SqlConnection(connectionstring))
-             {
-                 connection.Open();
-                 using (SqlCommand command = connection.CreateCommand())
-                 {
-                     command.CommandText = "insert into Users values (@name, @idEmployee, Convert(varbinary(max), @passwordHash), Convert(varbinary(max), @passwordSalt))";
-                     command.Parameters.AddWithValue ("name", username);
-                     command.Parameters.AddWithValue("idEmployee", 1);
-                     HashPassword(password);
-                     command.Parameters.AddWithValue("passwordHash", PasswordHash);
-                     command.Parameters.AddWithValue("passwordSalt", PasswordSalt);
-                     command.ExecuteNonQuery();
-                 }
-                 connection.Close();
-             }
-         }*/
+        public void ChangeUserPassword(int idUser, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "update Users set PasswordHash=@passwordHash,PasswordSalt=@passwordSalt where IdUser=@idUser";
+                    command.Parameters.AddWithValue("passwordHash", passwordHash);
+                    command.Parameters.AddWithValue("passwordSalt", passwordSalt);
+                    command.Parameters.AddWithValue("idUser", idUser);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
     }
 }

@@ -32,6 +32,10 @@ namespace Zaverecny_projekt_Greplova
                         mainForm.Show();
                         this.Hide();
                     }
+                    else
+                    {
+                        MessageBox.Show("ověření hesla selhalo:(");
+                    }
                 }
                 else
                 {
@@ -43,18 +47,13 @@ namespace Zaverecny_projekt_Greplova
                 MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
             }
         }
-        
 
-        /*private void btnRegister_Click(object sender, EventArgs e)
+        private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            if (txtNameL.Text != "" && txtPasswordL.Text != " ")
-            {
-                sqlRepository.Register(txtNameL.Text, txtPasswordL.Text);
-            }
-            else
-            {
-                MessageBox.Show("Nevyplnil jste uživatelké jméno či heslo");
-            }
-        }*/
+            PasswordChangeForm passwordChangeForm;
+            passwordChangeForm = new PasswordChangeForm();
+            passwordChangeForm.ShowDialog();
+        }
+
     }
 }

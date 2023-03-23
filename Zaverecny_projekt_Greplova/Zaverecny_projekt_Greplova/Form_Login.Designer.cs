@@ -33,7 +33,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtNameL = new System.Windows.Forms.TextBox();
             this.txtPasswordL = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -42,7 +42,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnLogin.Location = new System.Drawing.Point(27, 199);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(111, 44);
+            this.btnLogin.Size = new System.Drawing.Size(100, 44);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -85,17 +85,17 @@
             this.txtPasswordL.Size = new System.Drawing.Size(281, 30);
             this.txtPasswordL.TabIndex = 4;
             // 
-            // btnRegister
+            // btnResetPassword
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRegister.Location = new System.Drawing.Point(197, 199);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(111, 44);
-            this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = false;
-           // this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnResetPassword.Location = new System.Drawing.Point(150, 199);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(158, 44);
+            this.btnResetPassword.TabIndex = 5;
+            this.btnResetPassword.Text = "Reset password";
+            this.btnResetPassword.UseVisualStyleBackColor = false;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // Form_Login
             // 
@@ -103,7 +103,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(339, 276);
-            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.txtPasswordL);
             this.Controls.Add(this.txtNameL);
             this.Controls.Add(this.lblPassword);
@@ -123,7 +123,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtNameL;
         private System.Windows.Forms.TextBox txtPasswordL;
-        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnResetPassword;
     }
 }
 

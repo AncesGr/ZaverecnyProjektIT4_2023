@@ -17,12 +17,14 @@ namespace Zaverecny_projekt_Greplova
             Role = role;
         }
 
-        public User(string name, byte[] passwordHash, byte[] passwordSalt)
+        public User(int id, string name, byte[] passwordHash, byte[] passwordSalt)
         {
+            Id = id;
             Name = name;
             PasswordHash = passwordHash;
             PasswordSalt = passwordSalt;
         }
+
 
         public string Name { get; set; }
         public byte[] PasswordHash { get; set; }
@@ -44,10 +46,20 @@ namespace Zaverecny_projekt_Greplova
 
         public void ResetPassword()
         {
+            HashPassword("heslo");
+        }
+
+        public void ChangePassword(string password)
+        {
+            HashPassword(password);
+        }
+
+        private void HashPassword(string password)
+        {
             using (var hmac = new HMACSHA512())
             {
                 PasswordSalt = hmac.Key;
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("heslo"));
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
     }

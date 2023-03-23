@@ -42,5 +42,13 @@ namespace Zaverecny_projekt_Greplova
             AdminUserEdit adminUserEdit = new AdminUserEdit(id,this);
             adminUserEdit.ShowDialog();
         }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            AddUserForm addUserForm;
+            addUserForm = new AddUserForm();
+            addUserForm.ShowDialog();
+
+        }
     }
 }

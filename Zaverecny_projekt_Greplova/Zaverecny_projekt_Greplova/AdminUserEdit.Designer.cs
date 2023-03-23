@@ -66,6 +66,7 @@
             // 
             // btnAdmEditPassword
             // 
+            this.btnAdmEditPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdmEditPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdmEditPassword.ForeColor = System.Drawing.Color.Black;
             this.btnAdmEditPassword.Location = new System.Drawing.Point(17, 197);
@@ -73,18 +74,19 @@
             this.btnAdmEditPassword.Size = new System.Drawing.Size(196, 36);
             this.btnAdmEditPassword.TabIndex = 4;
             this.btnAdmEditPassword.Text = "Reset password";
-            this.btnAdmEditPassword.UseVisualStyleBackColor = true;
+            this.btnAdmEditPassword.UseVisualStyleBackColor = false;
             this.btnAdmEditPassword.Click += new System.EventHandler(this.btnAdmEditPassword_Click);
             // 
             // btnAdmEditOK
             // 
+            this.btnAdmEditOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdmEditOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdmEditOK.Location = new System.Drawing.Point(236, 197);
             this.btnAdmEditOK.Name = "btnAdmEditOK";
             this.btnAdmEditOK.Size = new System.Drawing.Size(84, 36);
             this.btnAdmEditOK.TabIndex = 5;
             this.btnAdmEditOK.Text = "OK";
-            this.btnAdmEditOK.UseVisualStyleBackColor = true;
+            this.btnAdmEditOK.UseVisualStyleBackColor = false;
             this.btnAdmEditOK.Click += new System.EventHandler(this.btnAdmEditOK_Click);
             // 
             // cmbEditRole

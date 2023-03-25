@@ -36,7 +36,7 @@ namespace Zaverecny_projekt_Greplova
                         }
                         else
                         {
-                            MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+                            MessageBox.Show("User with that username doesnt exist!");
                         }
                     }
                 }
@@ -63,7 +63,7 @@ namespace Zaverecny_projekt_Greplova
                         }
                         else
                         {
-                            MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+                            MessageBox.Show("User with that username doesnt exist!");
                         }
                     }
                 }
@@ -92,6 +92,28 @@ namespace Zaverecny_projekt_Greplova
                 connection.Close();
             }
             return users;
+        }
+
+        public List<Employee> GetEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from Employee";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            employees.Add(new Employee(Convert.ToInt32(reader["IdEmployee"]), reader["FirstName"].ToString(), Convert.ToString(reader["LastName"])));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return employees;
         }
 
         public List<Role> GetRoles()
@@ -130,11 +152,11 @@ namespace Zaverecny_projekt_Greplova
                     {
                         if (reader.Read())
                         {
-                            employee = new Employee(reader["FirstName"].ToString(), reader["LastName"].ToString());
+                            employee = new Employee(idEmployee, reader["FirstName"].ToString(), reader["LastName"].ToString());
                         }
                         else
                         {
-                            MessageBox.Show("Tento zaměstnanec není uveden v databázi!");
+                            MessageBox.Show("This user is not in the database!");
                         }
                     }
                 }
@@ -161,7 +183,7 @@ namespace Zaverecny_projekt_Greplova
                         }
                         else
                         {
-                            MessageBox.Show("Tato role neexistuje!");
+                            MessageBox.Show("This role doesnt exist!");
                         }
                     }
                 }
@@ -188,7 +210,7 @@ namespace Zaverecny_projekt_Greplova
                         }
                         else
                         {
-                            MessageBox.Show("Tato role neexistuje!");
+                            MessageBox.Show("This role doesnt exist!");
                         }
                     }
                 }

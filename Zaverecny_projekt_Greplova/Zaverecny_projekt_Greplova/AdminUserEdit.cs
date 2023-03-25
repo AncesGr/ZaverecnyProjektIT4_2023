@@ -47,7 +47,7 @@ namespace Zaverecny_projekt_Greplova
             }
             else
             {
-                MessageBox.Show("Nejsou vyplněna všechna políčka!");
+                MessageBox.Show("Not all fields are filled in");
             }
         }
 

@@ -51,7 +51,7 @@
             this.lwAdmUserEdit.Location = new System.Drawing.Point(0, 0);
             this.lwAdmUserEdit.MinimumSize = new System.Drawing.Size(440, 450);
             this.lwAdmUserEdit.Name = "lwAdmUserEdit";
-            this.lwAdmUserEdit.Size = new System.Drawing.Size(440, 450);
+            this.lwAdmUserEdit.Size = new System.Drawing.Size(479, 450);
             this.lwAdmUserEdit.TabIndex = 0;
             this.lwAdmUserEdit.UseCompatibleStateImageBehavior = false;
             this.lwAdmUserEdit.View = System.Windows.Forms.View.Details;
@@ -83,7 +83,7 @@
             // 
             this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEditUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEditUser.Location = new System.Drawing.Point(446, 12);
+            this.btnEditUser.Location = new System.Drawing.Point(485, 12);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(75, 36);
             this.btnEditUser.TabIndex = 1;
@@ -95,7 +95,7 @@
             // 
             this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddUser.Location = new System.Drawing.Point(446, 64);
+            this.btnAddUser.Location = new System.Drawing.Point(485, 68);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(75, 36);
             this.btnAddUser.TabIndex = 2;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 450);
+            this.ClientSize = new System.Drawing.Size(572, 450);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnEditUser);
             this.Controls.Add(this.lwAdmUserEdit);

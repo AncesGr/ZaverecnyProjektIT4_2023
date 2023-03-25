@@ -31,17 +31,17 @@ namespace Zaverecny_projekt_Greplova
                         user.ChangePassword(txtNewPassword.Text);
                         sqlRepository.ChangeUserPassword(user.Id, user.PasswordHash, user.PasswordSalt);
                         this.Close();
-                        MessageBox.Show("heslo se úspěšně změnilo");
+                        MessageBox.Show("Password changed successfully");
                     }
                     else
                     {
-                        MessageBox.Show("heslo neexistuje");
+                        MessageBox.Show("Password doesnt exist!");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Tento uživatel neexistuje");
+                MessageBox.Show("This user doesnt exist");
             }
                 
         }

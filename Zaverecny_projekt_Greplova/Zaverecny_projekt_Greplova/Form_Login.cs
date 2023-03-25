@@ -34,17 +34,17 @@ namespace Zaverecny_projekt_Greplova
                     }
                     else
                     {
-                        MessageBox.Show("ověření hesla selhalo:(");
+                        MessageBox.Show("Password verification failed");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Tento uživatel neexistuje!");
+                    MessageBox.Show("This user doesnt exist!");
                 }
             }
             else
             {
-                MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
+                MessageBox.Show("You didnt enter a password or username!");
             }
         }
 

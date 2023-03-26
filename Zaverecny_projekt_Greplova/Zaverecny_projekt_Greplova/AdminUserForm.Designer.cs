@@ -35,6 +35,7 @@
             this.chRole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lwAdmUserEdit
@@ -85,7 +86,7 @@
             this.btnEditUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEditUser.Location = new System.Drawing.Point(485, 12);
             this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(75, 36);
+            this.btnEditUser.Size = new System.Drawing.Size(89, 36);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit";
             this.btnEditUser.UseVisualStyleBackColor = false;
@@ -97,17 +98,30 @@
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddUser.Location = new System.Drawing.Point(485, 68);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(75, 36);
+            this.btnAddUser.Size = new System.Drawing.Size(89, 36);
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.Text = "Add";
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
+            // btnDeleteUser
+            // 
+            this.btnDeleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeleteUser.Location = new System.Drawing.Point(485, 124);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(89, 36);
+            this.btnDeleteUser.TabIndex = 3;
+            this.btnDeleteUser.Text = "Delete";
+            this.btnDeleteUser.UseVisualStyleBackColor = false;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
             // AdminUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 450);
+            this.ClientSize = new System.Drawing.Size(584, 450);
+            this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnEditUser);
             this.Controls.Add(this.lwAdmUserEdit);
@@ -128,5 +142,6 @@
         private System.Windows.Forms.ColumnHeader chID;
         private System.Windows.Forms.ColumnHeader chRole;
         private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Button btnDeleteUser;
     }
 }

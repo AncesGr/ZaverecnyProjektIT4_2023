@@ -50,6 +50,7 @@
             this.txtCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtCurrentPassword.Location = new System.Drawing.Point(35, 147);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
+            this.txtCurrentPassword.PasswordChar = '*';
             this.txtCurrentPassword.Size = new System.Drawing.Size(201, 30);
             this.txtCurrentPassword.TabIndex = 1;
             // 
@@ -58,6 +59,7 @@
             this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtNewPassword.Location = new System.Drawing.Point(35, 244);
             this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(201, 30);
             this.txtNewPassword.TabIndex = 2;
             // 
@@ -117,7 +119,7 @@
             this.Controls.Add(this.txtCurrentPassword);
             this.Controls.Add(this.txtPasswordChangeName);
             this.Name = "PasswordChangeForm";
-            this.Text = "PasswordChangeForm";
+            this.Text = "Change password";
             this.ResumeLayout(false);
             this.PerformLayout();
 

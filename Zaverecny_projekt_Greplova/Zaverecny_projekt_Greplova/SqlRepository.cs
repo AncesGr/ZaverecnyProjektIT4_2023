@@ -270,5 +270,39 @@ namespace Zaverecny_projekt_Greplova
             }
         }
 
+        public void AddUser(string name, int idEmployee, byte[] passwordHash, byte[] passwordSalt, int role)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into Users values (@name, @idEmployee, @passwordHash, @passwordSalt, @role)";
+                    command.Parameters.AddWithValue("name", name);
+                    command.Parameters.AddWithValue("idEmployee", idEmployee);
+                    command.Parameters.AddWithValue("passwordHash", passwordHash);
+                    command.Parameters.AddWithValue("passwordSalt", passwordSalt);
+                    command.Parameters.AddWithValue("role", role);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void DeleteUser(int idUser)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "delete from Users where IdUser=@idUser";
+                    command.Parameters.AddWithValue("idUser", idUser);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
     }
 }

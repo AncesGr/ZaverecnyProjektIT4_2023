@@ -69,6 +69,7 @@
             // 
             // cmbAddEmployee
             // 
+            this.cmbAddEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbAddEmployee.FormattingEnabled = true;
             this.cmbAddEmployee.Location = new System.Drawing.Point(36, 135);
@@ -78,6 +79,7 @@
             // 
             // cmbAddRole
             // 
+            this.cmbAddRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAddRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbAddRole.FormattingEnabled = true;
             this.cmbAddRole.Location = new System.Drawing.Point(36, 212);
@@ -103,6 +105,7 @@
             this.btnAddUserForm.TabIndex = 6;
             this.btnAddUserForm.Text = "OK";
             this.btnAddUserForm.UseVisualStyleBackColor = false;
+            this.btnAddUserForm.Click += new System.EventHandler(this.btnAddUserForm_Click);
             // 
             // AddUserForm
             // 
@@ -118,7 +121,7 @@
             this.Controls.Add(this.lblAddEmployee);
             this.Controls.Add(this.lblAddUserName);
             this.Name = "AddUserForm";
-            this.Text = "AddUserForm";
+            this.Text = "Add User";
             this.Load += new System.EventHandler(this.AddUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

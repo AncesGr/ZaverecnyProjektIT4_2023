@@ -46,9 +46,17 @@ namespace Zaverecny_projekt_Greplova
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             AddUserForm addUserForm;
-            addUserForm = new AddUserForm();
+            addUserForm = new AddUserForm(this);
             addUserForm.ShowDialog();
 
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if(lwAdmUserEdit.SelectedItems.Count > 0)
+            {
+                sqlRepository.DeleteUser(Convert.ToInt32(lwAdmUserEdit.SelectedItems[0].SubItems[2].Text));
+            }
         }
     }
 }

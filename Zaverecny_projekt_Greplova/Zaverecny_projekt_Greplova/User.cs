@@ -25,6 +25,10 @@ namespace Zaverecny_projekt_Greplova
             PasswordSalt = passwordSalt;
         }
 
+        public User(string name)
+        {
+            Name = name;
+        }
 
         public string Name { get; set; }
         public byte[] PasswordHash { get; set; }

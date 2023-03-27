@@ -304,5 +304,21 @@ namespace Zaverecny_projekt_Greplova
             }
         }
 
+        public void UpdateRole(int idRole, string name)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "update Roles set Name=@name where IdRoles=@idRole";
+                    command.Parameters.AddWithValue("Name", name);
+                    command.Parameters.AddWithValue("IdRoles", idRole);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
     }
 }

@@ -52,6 +52,18 @@
     <Compile Include="AddUserForm.Designer.cs">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRoleEdit.Designer.cs">
+      <DependentUpon>AdminRoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRolesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRolesForm.Designer.cs">
+      <DependentUpon>AdminRolesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminUserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRoleEdit.resx">
+      <DependentUpon>AdminRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRolesForm.resx">
+      <DependentUpon>AdminRolesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUserEdit.resx">
       <DependentUpon>AdminUserEdit.cs</DependentUpon>

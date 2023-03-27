@@ -69,6 +69,7 @@
             this.btnAdmRole.TabIndex = 3;
             this.btnAdmRole.Text = "Role";
             this.btnAdmRole.UseVisualStyleBackColor = false;
+            this.btnAdmRole.Click += new System.EventHandler(this.btnAdmRole_Click);
             // 
             // btnAdmEmployee
             // 
@@ -128,7 +129,7 @@
             this.Controls.Add(this.btnAdmUsers);
             this.Controls.Add(this.lblAdmin);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Admin menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

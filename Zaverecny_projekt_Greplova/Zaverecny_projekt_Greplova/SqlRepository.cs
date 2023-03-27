@@ -311,9 +311,39 @@ namespace Zaverecny_projekt_Greplova
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "update Roles set Name=@name where IdRoles=@idRole";
+                    command.CommandText = "update Roles set Name=@name where IdRoles=@idRoles";
                     command.Parameters.AddWithValue("Name", name);
                     command.Parameters.AddWithValue("IdRoles", idRole);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void DeleteRole(int idRole)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "delete from Roles where IdRoles=@idRoles";
+                    command.Parameters.AddWithValue("IdRoles", idRole);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void AddRole(string name)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into Roles values (@Name)";
+                    command.Parameters.AddWithValue("Name", name);
                     command.ExecuteNonQuery();
                 }
                 connection.Close();

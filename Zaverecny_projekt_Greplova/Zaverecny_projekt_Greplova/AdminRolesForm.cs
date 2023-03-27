@@ -45,12 +45,21 @@ namespace Zaverecny_projekt_Greplova
 
         private void btnAddRole_Click(object sender, EventArgs e)
         {
-
+            AdminRoleAdd adminRoleAdd = new AdminRoleAdd(this);
+            adminRoleAdd.ShowDialog();
         }
 
         private void btnDeleteRole_Click(object sender, EventArgs e)
         {
-
+            if (lwAdmRolesEdit.SelectedItems.Count > 0)
+            {
+                sqlRepository.DeleteRole(Convert.ToInt32(lwAdmRolesEdit.SelectedItems[0].SubItems[1].Text));
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("You havent selected a role");
+            }
         }
     }
 }

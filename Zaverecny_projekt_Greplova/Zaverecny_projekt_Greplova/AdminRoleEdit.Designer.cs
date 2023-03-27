@@ -71,6 +71,7 @@
             this.Controls.Add(this.btnAdmRoleEditOK);
             this.Controls.Add(this.txtAdmRoleEditName);
             this.Controls.Add(this.lblAdmRoleEditName);
+            this.MinimumSize = new System.Drawing.Size(296, 219);
             this.Name = "AdminRoleEdit";
             this.Text = "Role Edit";
             this.Load += new System.EventHandler(this.AdminRoleEdit_Load);

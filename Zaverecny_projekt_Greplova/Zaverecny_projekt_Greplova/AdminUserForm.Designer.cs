@@ -52,7 +52,7 @@
             this.lwAdmUserEdit.Location = new System.Drawing.Point(0, 0);
             this.lwAdmUserEdit.MinimumSize = new System.Drawing.Size(440, 450);
             this.lwAdmUserEdit.Name = "lwAdmUserEdit";
-            this.lwAdmUserEdit.Size = new System.Drawing.Size(479, 450);
+            this.lwAdmUserEdit.Size = new System.Drawing.Size(586, 450);
             this.lwAdmUserEdit.TabIndex = 0;
             this.lwAdmUserEdit.UseCompatibleStateImageBehavior = false;
             this.lwAdmUserEdit.View = System.Windows.Forms.View.Details;
@@ -84,7 +84,7 @@
             // 
             this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEditUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEditUser.Location = new System.Drawing.Point(485, 12);
+            this.btnEditUser.Location = new System.Drawing.Point(605, 12);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(89, 36);
             this.btnEditUser.TabIndex = 1;
@@ -96,7 +96,7 @@
             // 
             this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddUser.Location = new System.Drawing.Point(485, 68);
+            this.btnAddUser.Location = new System.Drawing.Point(605, 68);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(89, 36);
             this.btnAddUser.TabIndex = 2;
@@ -108,7 +108,7 @@
             // 
             this.btnDeleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDeleteUser.Location = new System.Drawing.Point(485, 124);
+            this.btnDeleteUser.Location = new System.Drawing.Point(605, 124);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(89, 36);
             this.btnDeleteUser.TabIndex = 3;
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 450);
+            this.ClientSize = new System.Drawing.Size(718, 450);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnEditUser);

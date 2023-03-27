@@ -15,6 +15,7 @@ namespace Zaverecny_projekt_Greplova
             LastName = lastName;
         }
 
+        public DateTime BirthDate { get; set; }
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

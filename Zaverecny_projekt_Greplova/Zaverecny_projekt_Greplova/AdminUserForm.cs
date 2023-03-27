@@ -56,6 +56,12 @@ namespace Zaverecny_projekt_Greplova
             if(lwAdmUserEdit.SelectedItems.Count > 0)
             {
                 sqlRepository.DeleteUser(Convert.ToInt32(lwAdmUserEdit.SelectedItems[0].SubItems[2].Text));
+                LoadData();
+                MessageBox.Show("The user has been deleted");
+            }
+            else
+            {
+                MessageBox.Show("No user has been selected");
             }
         }
     }

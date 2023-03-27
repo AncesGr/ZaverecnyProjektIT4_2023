@@ -49,6 +49,11 @@ namespace Zaverecny_projekt_Greplova
                 sqlRepository.AddUser(txtAddUserName.Text,Convert.ToInt32(idEmployee[0].Trim()), newUser.PasswordHash, newUser.PasswordSalt, role.Id);
                 AdminUserForm.LoadData();
                 this.Close();
+                MessageBox.Show("The user has been successfully added");
+            }
+            else
+            {
+                MessageBox.Show("Not all fields are filled");
             }
         }
     }

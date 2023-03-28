@@ -30,7 +30,7 @@ namespace Zaverecny_projekt_Greplova
             var roles = sqlRepository.GetRoles();
             foreach (var role in roles)
             {
-                lwAdmRolesEdit.Items.Add(new ListViewItem(new string[] { role.Name, role.Id.ToString() }));
+                lwAdmRolesEdit.Items.Add(new ListViewItem(new string[] { role.Name, role.Id.ToString()  }));
             }
         }
 

@@ -129,7 +129,7 @@ namespace Zaverecny_projekt_Greplova
                     {
                         while (reader.Read())
                         {
-                            roles.Add(new Role(reader["Name"].ToString()));
+                            roles.Add(new Role(reader["Name"].ToString(),(int)reader["IdRoles"]));
                         }
                     }
                 }
@@ -179,7 +179,7 @@ namespace Zaverecny_projekt_Greplova
                     {
                         if (reader.Read())
                         {
-                            role = new Role(reader["Name"].ToString());
+                            role = new Role(reader["Name"].ToString(), (int)reader["IdRoles"]);
                         }
                         else
                         {
@@ -206,7 +206,7 @@ namespace Zaverecny_projekt_Greplova
                     {
                         if (reader.Read())
                         {
-                            role = new Role(Convert.ToInt32(reader["IdRoles"]));
+                            role = new Role(Convert.ToString(reader["Name"]),(int)reader["IdRoles"]);
                         }
                         else
                         {
@@ -327,7 +327,7 @@ namespace Zaverecny_projekt_Greplova
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "delete from Roles where IdRoles=@idRoles";
+                    command.CommandText = "delete from Roles where IdRoles=@IdRoles";
                     command.Parameters.AddWithValue("IdRoles", idRole);
                     command.ExecuteNonQuery();
                 }

@@ -38,5 +38,11 @@ namespace Zaverecny_projekt_Greplova
             AdminRolesForm adminRolesForm = new AdminRolesForm();
             adminRolesForm.ShowDialog();
         }
+
+        private void btnAdmEmployee_Click(object sender, EventArgs e)
+        {
+            AdminEmployeeForm adminEmployeeForm = new AdminEmployeeForm();
+            adminEmployeeForm.ShowDialog();
+        }
     }
 }

@@ -81,6 +81,7 @@
             this.btnAdmEmployee.TabIndex = 4;
             this.btnAdmEmployee.Text = "Employee";
             this.btnAdmEmployee.UseVisualStyleBackColor = false;
+            this.btnAdmEmployee.Click += new System.EventHandler(this.btnAdmEmployee_Click);
             // 
             // btnAdmContract
             // 

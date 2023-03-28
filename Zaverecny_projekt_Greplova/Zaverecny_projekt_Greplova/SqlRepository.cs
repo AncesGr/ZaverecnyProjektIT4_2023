@@ -107,7 +107,7 @@ namespace Zaverecny_projekt_Greplova
                     {
                         while (reader.Read())
                         {
-                            employees.Add(new Employee(Convert.ToInt32(reader["IdEmployee"]), reader["FirstName"].ToString(), Convert.ToString(reader["LastName"])));
+                            employees.Add(new Employee(Convert.ToDateTime(reader["BirthDate"]), reader["FirstName"].ToString(), reader["LastName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), reader["Email"].ToString(), reader["PhoneNumber"].ToString()));
                         }
                     }
                 }
@@ -152,7 +152,7 @@ namespace Zaverecny_projekt_Greplova
                     {
                         if (reader.Read())
                         {
-                            employee = new Employee(idEmployee, reader["FirstName"].ToString(), reader["LastName"].ToString());
+                            employee = new Employee((DateTime)reader["BirthDate"], reader["FirstName"].ToString(), reader["LastName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), reader["Email"].ToString(), reader["PhoneNumber"].ToString());
                         }
                         else
                         {

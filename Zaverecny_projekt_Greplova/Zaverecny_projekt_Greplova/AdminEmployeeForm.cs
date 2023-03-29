@@ -42,5 +42,25 @@ namespace Zaverecny_projekt_Greplova
                 adminEmployeeEdit.ShowDialog();
             }
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            AdminEmployeeAdd adminEmployeeAdd = new AdminEmployeeAdd(this);
+            adminEmployeeAdd.ShowDialog();
+        }
+
+        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            if (lwAdmEmployeeEdit.SelectedItems.Count > 0)
+            {
+                sqlRepository.DeleteEmployee(Convert.ToInt32(lwAdmEmployeeEdit.SelectedItems[0].SubItems[2].Text));
+                LoadData();
+                MessageBox.Show("Employee is deleted");
+            }
+            else
+            {
+                MessageBox.Show("No employee was selected!");
+            }
+        }
     }
 }

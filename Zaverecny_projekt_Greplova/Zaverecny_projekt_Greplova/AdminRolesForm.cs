@@ -55,6 +55,7 @@ namespace Zaverecny_projekt_Greplova
             {
                 sqlRepository.DeleteRole(Convert.ToInt32(lwAdmRolesEdit.SelectedItems[0].SubItems[1].Text));
                 LoadData();
+                MessageBox.Show("Role is deleted");
             }
             else
             {

@@ -185,6 +185,40 @@ namespace Zaverecny_projekt_Greplova
             }
         }
 
+        public void AddEmployee(string firstName, string lastName, DateTime birthDate, string email, string phone)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into Employee values (@firstName,@lastName,@birthDate,@email, @phone)";
+                    command.Parameters.AddWithValue("firstName", firstName);
+                    command.Parameters.AddWithValue("lastName", lastName);
+                    command.Parameters.AddWithValue("birthDate", birthDate);
+                    command.Parameters.AddWithValue("email", email);
+                    command.Parameters.AddWithValue("phone", phone);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void DeleteEmployee(int idEmployee)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "delete from Employee where IdEmployee=@idEmployee";
+                    command.Parameters.AddWithValue("IdEmployee", idEmployee);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
         public Role GetRole(int idRole)
         {
             Role role = null;

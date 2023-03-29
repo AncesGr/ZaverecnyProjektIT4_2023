@@ -110,6 +110,7 @@
             this.btnDeleteEmployee.TabIndex = 8;
             this.btnDeleteEmployee.Text = "Delete";
             this.btnDeleteEmployee.UseVisualStyleBackColor = false;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnAddEmployee
             // 
@@ -121,6 +122,7 @@
             this.btnAddEmployee.TabIndex = 7;
             this.btnAddEmployee.Text = "Add";
             this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnEditEmployee
             // 

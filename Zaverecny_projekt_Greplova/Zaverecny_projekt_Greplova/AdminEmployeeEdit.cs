@@ -40,7 +40,8 @@ namespace Zaverecny_projekt_Greplova
             if (txtAdmEmployeeEditEmail.Text != "" && txtAdmEmployeeEditName.Text != "" && txtAdmEmployeeEditLastname.Text != "" && txtAdmEmployeeEditPhone.Text != "")
             {
                 sqlRepository.UpdateEmployee(IdEmployee, txtAdmEmployeeEditName.Text, txtAdmEmployeeEditLastname.Text, dtpAdmEmployeeEditBirthdate.Value, txtAdmEmployeeEditEmail.Text, txtAdmEmployeeEditPhone.Text);
-                AdminEmployeeForm.LoadData();   
+                AdminEmployeeForm.LoadData();
+                MessageBox.Show("Employee is edit");
                 Close();
             }
             else

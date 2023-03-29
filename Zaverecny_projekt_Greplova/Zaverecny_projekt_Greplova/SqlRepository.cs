@@ -165,6 +165,26 @@ namespace Zaverecny_projekt_Greplova
             return employee;
         }
 
+        public void UpdateEmployee(int idEmployee, string firstName, string lastName, DateTime birthDate, string email, string phone)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "update Employee set FirstName=@firstName,LastName=@lastName,BirthDate=@birthDate,Email=@email,PhoneNumber=@phone where IdEmployee=@idEmployee";
+                    command.Parameters.AddWithValue("firstName", firstName);
+                    command.Parameters.AddWithValue("lastName", lastName);
+                    command.Parameters.AddWithValue("birthDate", birthDate);
+                    command.Parameters.AddWithValue("email", email);
+                    command.Parameters.AddWithValue("phone", phone);
+                    command.Parameters.AddWithValue("idEmployee", idEmployee);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
         public Role GetRole(int idRole)
         {
             Role role = null;

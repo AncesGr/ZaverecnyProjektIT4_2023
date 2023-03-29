@@ -51,6 +51,7 @@
             this.btnAdminEmployeeEditOK.TabIndex = 24;
             this.btnAdminEmployeeEditOK.Text = "OK";
             this.btnAdminEmployeeEditOK.UseVisualStyleBackColor = false;
+            this.btnAdminEmployeeEditOK.Click += new System.EventHandler(this.btnAdminEmployeeEditOK_Click);
             // 
             // txtAdmEmployeeEditPhone
             // 

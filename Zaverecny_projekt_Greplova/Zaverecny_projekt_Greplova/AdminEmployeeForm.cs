@@ -24,7 +24,7 @@ namespace Zaverecny_projekt_Greplova
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             var employees = sqlRepository.GetEmployees();
             lwAdmEmployeeEdit.Items.Clear();
@@ -38,7 +38,7 @@ namespace Zaverecny_projekt_Greplova
         {
             if (lwAdmEmployeeEdit.SelectedItems.Count > 0)
             {
-                AdminEmployeeEdit adminEmployeeEdit = new AdminEmployeeEdit(Convert.ToInt32(lwAdmEmployeeEdit.SelectedItems[0].SubItems[2].Text));
+                AdminEmployeeEdit adminEmployeeEdit = new AdminEmployeeEdit(Convert.ToInt32(lwAdmEmployeeEdit.SelectedItems[0].SubItems[2].Text),this);
                 adminEmployeeEdit.ShowDialog();
             }
         }

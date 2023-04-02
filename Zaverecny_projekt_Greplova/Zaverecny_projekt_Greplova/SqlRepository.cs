@@ -496,5 +496,98 @@ namespace Zaverecny_projekt_Greplova
                 connection.Close();
             }
         }
+
+        public List<WorkType> GetWorkTypes()
+        {
+            List<WorkType> workTypes = new List<WorkType>();
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from WorkType";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            workTypes.Add(new WorkType(Convert.ToInt32(reader["IdWorkType"]), reader["Name"].ToString(), reader["Description"].ToString()));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return workTypes;
+        }
+
+        public WorkType GetWorkType(int idWorkType)
+        {
+            WorkType workType = null;
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from WorkType where IdWorkType=@idWorkType";
+                    command.Parameters.AddWithValue("idWorkType", idWorkType);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            workType = new WorkType(Convert.ToInt32(reader["IdWorkType"]), reader["Name"].ToString(), reader["Description"].ToString());
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return workType;
+        }
+
+        public void UpdateWorkType(string name, string descrtiption, int idWorkType)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "update WorkType set Name=@name, Description=@description where IdWorkType=@idWorkType";
+                    command.Parameters.AddWithValue("name", name);
+                    command.Parameters.AddWithValue("description", descrtiption);
+                    command.Parameters.AddWithValue("idWorkType", idWorkType);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void AddWorkType(string name, string description)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into WorkType values (@name,@description)";
+                    command.Parameters.AddWithValue("name", name);
+                    command.Parameters.AddWithValue("description", description);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void DeleteWorkType(int idWork)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "delete from WorkType where IdWorkType=@idWorkType";
+                    command.Parameters.AddWithValue("idWorkType", idWork);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
     }
 }

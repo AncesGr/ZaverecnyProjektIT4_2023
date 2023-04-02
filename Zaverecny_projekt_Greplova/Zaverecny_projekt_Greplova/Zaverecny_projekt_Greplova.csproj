@@ -118,6 +118,24 @@
     <Compile Include="AdminUserForm.Designer.cs">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminWorkTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkTypeAdd.Designer.cs">
+      <DependentUpon>AdminWorkTypeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWorkTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkTypeEdit.Designer.cs">
+      <DependentUpon>AdminWorkTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWorkTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkTypeForm.Designer.cs">
+      <DependentUpon>AdminWorkTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contract.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Form_Login.cs">
@@ -143,6 +161,7 @@
     <Compile Include="Role.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="WorkType.cs" />
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +197,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUserForm.resx">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminWorkTypeAdd.resx">
+      <DependentUpon>AdminWorkTypeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminWorkTypeEdit.resx">
+      <DependentUpon>AdminWorkTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminWorkTypeForm.resx">
+      <DependentUpon>AdminWorkTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>

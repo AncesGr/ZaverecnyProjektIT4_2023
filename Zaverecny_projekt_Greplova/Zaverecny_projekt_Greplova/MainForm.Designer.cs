@@ -105,6 +105,7 @@
             this.btnAdmWorkType.TabIndex = 6;
             this.btnAdmWorkType.Text = "WorkType";
             this.btnAdmWorkType.UseVisualStyleBackColor = false;
+            this.btnAdmWorkType.Click += new System.EventHandler(this.btnAdmWorkType_Click);
             // 
             // btnAdmWorkHours
             // 

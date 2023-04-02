@@ -118,6 +118,24 @@
     <Compile Include="AdminUserForm.Designer.cs">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminWorkHoursAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkHoursAdd.Designer.cs">
+      <DependentUpon>AdminWorkHoursAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWorkHoursEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkHoursEdit.Designer.cs">
+      <DependentUpon>AdminWorkHoursEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWorkHoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkHoursForm.Designer.cs">
+      <DependentUpon>AdminWorkHoursForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminWorkTypeAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +179,7 @@
     <Compile Include="Role.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="WorhHours.cs" />
     <Compile Include="WorkType.cs" />
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>

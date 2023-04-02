@@ -93,6 +93,7 @@
             this.btnAdmContract.TabIndex = 5;
             this.btnAdmContract.Text = "Contract";
             this.btnAdmContract.UseVisualStyleBackColor = false;
+            this.btnAdmContract.Click += new System.EventHandler(this.btnAdmContract_Click);
             // 
             // btnAdmWorkType
             // 

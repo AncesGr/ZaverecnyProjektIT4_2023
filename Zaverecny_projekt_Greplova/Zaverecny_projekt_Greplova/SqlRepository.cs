@@ -404,5 +404,97 @@ namespace Zaverecny_projekt_Greplova
             }
         }
 
+        public List<Contract> GetContracts()
+        {
+            List<Contract> contracts = new List<Contract>();
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from Contract";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            contracts.Add(new Contract(Convert.ToInt32(reader["IdContract"]), reader["Customer"].ToString(), reader["Description"].ToString()));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return contracts;
+        }
+
+        public Contract GetContract(int idContract)
+        {
+            Contract contract = null;
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from Contract where IdContract=@idContract";
+                    command.Parameters.Add("idContract", idContract);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            contract = new Contract(Convert.ToInt32(reader["IdContract"]), reader["Customer"].ToString(), reader["Description"].ToString());
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return contract;
+        }
+
+        public void UpdateContract(int idContract, string customer, string description)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "update Contract set Customer=@customer, Description=@description where IdContract=@idContract";
+                    command.Parameters.AddWithValue("customer", customer);
+                    command.Parameters.AddWithValue("description", description);
+                    command.Parameters.AddWithValue("idContract", idContract);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void AddContract(string customer, string description)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into Contract values (@Customer, @Description)";
+                    command.Parameters.AddWithValue("Customer", customer); 
+                    command.Parameters.AddWithValue("Description", description);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void DeleteContract(int idContract)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "delete from Contract where IdContract=@idContract";
+                    command.Parameters.AddWithValue("idContract", idContract);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
     }
 }

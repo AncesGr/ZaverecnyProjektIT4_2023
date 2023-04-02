@@ -44,5 +44,11 @@ namespace Zaverecny_projekt_Greplova
             AdminEmployeeForm adminEmployeeForm = new AdminEmployeeForm();
             adminEmployeeForm.ShowDialog();
         }
+
+        private void btnAdmContract_Click(object sender, EventArgs e)
+        {
+            AdminContractForm adminContractForm = new AdminContractForm();
+            adminContractForm.ShowDialog();
+        }
     }
 }

@@ -179,7 +179,7 @@
     <Compile Include="Role.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="WorhHours.cs" />
+    <Compile Include="WorkHours.cs" />
     <Compile Include="WorkType.cs" />
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>

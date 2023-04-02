@@ -589,5 +589,98 @@ namespace Zaverecny_projekt_Greplova
                 connection.Close();
             }
         }
+
+         public List<WorkHours> GetWorkHours()
+         {
+            List<WorkHours> workHours = new List<WorkHours>();
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from WorkHours";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            workHours.Add(new WorkHours(Convert.ToInt32(reader["IdWorkHours"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["IdContact"]), Convert.ToInt32(reader["Hours"])));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return workHours;
+         }
+
+        public WorkHours GetWorkHour(int idWorkHour)
+        {
+            WorkHours workHours = null;
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from WorkHours where IdWorkHours=@idWorkHours";
+                    command.Parameters.AddWithValue("idWorkHours", idWorkHour);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            workHours = new WorkHours(Convert.ToInt32(reader["IdWorkHours"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["IdContact"]), Convert.ToInt32(reader["Hours"]));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return workHours;
+        }
+
+        public void UpdateWorkHours(int idWorkHours, int idEmployee, int idContact, int hours)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "update WorkHours set IdEmployee=@idEmployee, IdContact=@idContact, Hours=@hours where IdWorkHours=@idWorkHours";
+                    command.Parameters.AddWithValue("IdEmployee", idEmployee);
+                    command.Parameters.AddWithValue("IdContact", idContact);
+                    command.Parameters.AddWithValue("Hours", hours);
+                    command.Parameters.AddWithValue("IdWorkHours", idWorkHours);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void AddWorkHours(int hours)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into WorkHours values (@hours)";
+                    command.Parameters.AddWithValue("Hours", hours);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        public void DeleteWorkHours(int idWorkHours)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "delete from WorkHours where IdWorkHours=@idWorkHours";
+                    command.Parameters.AddWithValue("idWorkHours", idWorkHours);
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
     }
 }
